@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b2dt1yp85yg2q"]
 
+[ext_resource type="Script" uid="uid://t5t4amdc2ylh" path="res://Scripts/opening_scene.gd" id="1_00wqr"]
 [ext_resource type="Texture2D" uid="uid://biuj31x7v0nmm" path="res://Assets/Opening Scene Background.png" id="1_3ktlq"]
 [ext_resource type="FontFile" uid="uid://b4bcpac07y2gr" path="res://Assets/Impacted.ttf" id="2_gfe25"]
 
@@ -28,6 +29,7 @@ corner_radius_bottom_left = 3
 corner_detail = 5
 
 [node name="Opening Scene" type="Node2D" unique_id=1953289272]
+script = ExtResource("1_00wqr")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1832630354]
 zoom = Vector2(0.6, 0.6)
@@ -48,7 +50,7 @@ bbcode_enabled = true
 text = "[center][shake][color=red]DUNGEON [color=white]OF [color=red]VERDICTS"
 fit_content = true
 
-[node name="Button" type="Button" parent="." unique_id=315556846]
+[node name="Start Button" type="Button" parent="." unique_id=315556846]
 offset_left = -230.0
 offset_top = 212.0
 offset_right = 238.0
@@ -58,3 +60,5 @@ theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_00wqr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2pc80")
 text = "START"
+
+[connection signal="pressed" from="Start Button" to="." method="_on_start_button_pressed"]

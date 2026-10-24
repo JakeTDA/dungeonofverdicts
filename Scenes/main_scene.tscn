@@ -49,7 +49,7 @@ script = ExtResource("1_jv6wh")
 texture = ExtResource("1_52fb6")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=705852329]
-zoom = Vector2(0.62, 0.62)
+zoom = Vector2(0.6, 0.6)
 
 [node name="Response Image" type="Node2D" parent="." unique_id=1432075937]
 position = Vector2(-684.99994, -240)
