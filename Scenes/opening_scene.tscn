@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://b2dt1yp85yg2q"]
+
+[ext_resource type="Texture2D" uid="uid://biuj31x7v0nmm" path="res://Assets/Opening Scene Background.png" id="1_3ktlq"]
+[ext_resource type="FontFile" uid="uid://b4bcpac07y2gr" path="res://Assets/Impacted.ttf" id="2_gfe25"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_00wqr"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pc80"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.22352941, 0.22352941, 0.22352941, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="Opening Scene" type="Node2D" unique_id=1953289272]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1832630354]
+zoom = Vector2(0.6, 0.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=836667707]
+texture = ExtResource("1_3ktlq")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=448980188]
+offset_left = -368.0
+offset_top = -489.0
+offset_right = 364.0
+offset_bottom = 168.0
+theme_override_constants/line_separation = -44
+theme_override_constants/outline_size = 40
+theme_override_fonts/normal_font = ExtResource("2_gfe25")
+theme_override_font_sizes/normal_font_size = 160
+bbcode_enabled = true
+text = "[center][shake][color=red]DUNGEON [color=white]OF [color=red]VERDICTS"
+fit_content = true
+
+[node name="Button" type="Button" parent="." unique_id=315556846]
+offset_left = -230.0
+offset_top = 212.0
+offset_right = 238.0
+offset_bottom = 378.0
+theme_override_fonts/font = ExtResource("2_gfe25")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_00wqr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2pc80")
+text = "START"
