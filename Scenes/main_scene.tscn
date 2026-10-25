@@ -34,7 +34,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.33, 0.66, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.05235987755982989, 0.0, -0.05235987755982989]
+"values": [0.0, 0.03490658503988659, 0.0, -0.03490658503988659]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iacmt"]
@@ -45,18 +45,58 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_iacmt"]
 resource_name = "Enter"
-length = 1.5
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1200, 0), Vector2(200, 0)]
+"values": [Vector2(1400, 0), Vector2(200, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.08726646, 0.0, -0.08726646, 0.0, 0.08726646, 0.0, -0.08726646, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_maf8m"]
+resource_name = "Exit"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(200, 0), Vector2(1400, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -68,7 +108,19 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.08726646, 0.0, -0.08726646, 0.0, 0.08726646, 0.0]
+"values": [0.0, -0.08726646, 0.0, 0.08726646, 0.0, -0.08726646, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_6ev3c"]
@@ -97,10 +149,23 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_maf8m"]
 _data = {
 &"Enter": SubResource("Animation_iacmt"),
+&"Exit": SubResource("Animation_maf8m"),
 &"RESET": SubResource("Animation_6ev3c")
 }
 
@@ -114,6 +179,7 @@ texture = ExtResource("1_52fb6")
 zoom = Vector2(0.6, 0.6)
 
 [node name="Response Image" type="Node2D" parent="." unique_id=1432075937]
+visible = false
 position = Vector2(-684.99994, -240)
 metadata/_edit_group_ = true
 
@@ -132,14 +198,14 @@ speed_scale = 2.0
 position = Vector2(1200, 0)
 scale = Vector2(1.2, 1.2)
 
-[node name="Label" type="Label" parent="NPC" unique_id=256496001]
-offset_right = 379.13043
-offset_bottom = 218.0
-text = "Hello"
+[node name="Dialogue Timer" type="Timer" parent="NPC" unique_id=772450556]
+wait_time = 2.0
+one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NPC" unique_id=1388853748]
 position = Vector2(-2, 100)
 texture = ExtResource("4_x6ack")
+flip_h = true
 vframes = 10
 frame = 8
 
@@ -149,9 +215,12 @@ libraries/ = SubResource("AnimationLibrary_maf8m")
 [node name="Droplet Particles" type="CPUParticles2D" parent="." unique_id=1767212493]
 position = Vector2(-142, -642)
 amount = 1
-lifetime = 1.5
+lifetime = 1.4000000000000001
 emission_shape = 3
 emission_rect_extents = Vector2(24, 1)
 scale_amount_min = 10.0
 scale_amount_max = 10.0
 color = Color(0.039215688, 0.35686275, 1, 1)
+
+[connection signal="timeout" from="NPC/Dialogue Timer" to="." method="_on_dialogue_timer_timeout"]
+[connection signal="animation_finished" from="NPC/AnimationPlayer" to="." method="_on_npc_animation_finished"]
