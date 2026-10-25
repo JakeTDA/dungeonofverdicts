@@ -6,4 +6,8 @@
 script = ExtResource("1_cvtn4")
 npc_name = "Monster Commander"
 sprite_frame = 6
+agree_loyalty = 10
+disagree_money = -30
+disagree_power = 5
+disagree_loyalty = 10
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"

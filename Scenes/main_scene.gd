@@ -21,7 +21,6 @@ var day = 1
 @onready var zombie = load("res://Resources/zombie.tres") # 9
 @onready var monstercommanderevent = load("res://Resources/monstercommanderevent.tres")
 @onready var npclist = [demon,eyeball,monstercommander,skeleton,slime,spider,zombie]
-@onready var specialnpclist = [witch,demonmerchant]
 var npc_state : String = "next_npc_ready"
 var adventurers = [0,-3,-6,-9,-11,-15]
 var robberyevent = false
@@ -73,10 +72,10 @@ func npc_appear():
 	if day > 1:
 		adventurer()
 	var i = RandomNumberGenerator.new()
-<<<<<<< HEAD
-	var rng : int = i.randi_range(0,6)
-	current_npc = npclist[rng]
+	var npc_num : int = i.randi_range(0,6)
+	current_npc = npclist[npc_num]
 	if robberyevent == true:
+		print("robbery event on")
 		current_npc.npc_name = "Suspect"
 		current_npc.dialogue = "Wait, I'm not guilty, please let me go!"
 		current_npc.agree_dialogue = "Thank you.. Thank you!"
@@ -86,12 +85,8 @@ func npc_appear():
 		current_npc = demonmerchant
 	elif day % 7 == 0:
 		current_npc = witch
-=======
-	var npc_num : int = i.randi_range(0,8)
-	current_npc = npclist[npc_num]
 	request_num = i.randi_range(1, 3)
 	
->>>>>>> c0799230c2eb9baf37b21e5bdd1441de2a42804d
 	print(current_npc.npc_name)
 	print(current_npc.dialogue)
 	
@@ -101,14 +96,22 @@ func npc_appear():
 	# l is index of frame, change sprite using the index, look at npclist for the list
 	
 func accept():
-<<<<<<< HEAD
 	if robberyevent == true:
-		
+		var rng = RandomNumberGenerator.new()
+		var luck = rng.randi_range(0,1)
+		if luck == 0:
+			current_npc.agree_power = -20
+			current_npc.agree_loyalty = -20
+		elif luck == 1:
+			current_npc.agree_money = 50
+			current_npc.agree_power = 10	
+		robberyevent = false	
+		print("robberyevent off")
 	if day == 10:
 		robberyevent = true
 		
 	npc_state = "exit_dialouge"
-	$"NPC/Dialogue Timer".start()	
+	$"NPC/Dialogue Container/Dialogue Timer".start()	
 	$"Response Image/Sprite2D".frame = 0
 	money += current_npc.agree_money
 	power += current_npc.agree_power
@@ -123,7 +126,6 @@ func accept():
 	print(loyalty)
 	print(kills)
 	
-=======
 	npc_state = "exit_dialogue"
 	$"Response Image/AnimationPlayer".speed_scale = 5.0
 	affirmative_response = true
@@ -131,19 +133,18 @@ func accept():
 	_set_dialogue()
 	
 
-
->>>>>>> c0799230c2eb9baf37b21e5bdd1441de2a42804d
 func decline():
+	if robberyevent == true:
+		robberyevent = false
 	npc_state = "exit_dialogue"
 	$"Response Image/AnimationPlayer".speed_scale = 5.0
 	affirmative_response = false
 	$"Response Image/Sprite2D".frame = 1
-<<<<<<< HEAD
 	money += current_npc.agree_money
 	power += current_npc.agree_power
 	rep += current_npc.agree_reputation
 	loyalty += current_npc.agree_loyalty
-	kills += current_npc.agree_killsgit 
+	kills += current_npc.agree_kills
 	day += 1
 	print(day)
 	print(money)
@@ -151,25 +152,23 @@ func decline():
 	print(rep)
 	print(loyalty)
 	print(kills)
-=======
 	_set_dialogue()
 	
->>>>>>> c0799230c2eb9baf37b21e5bdd1441de2a42804d
 
 func adventurer():
 	var rng = RandomNumberGenerator.new()
 	if rep < 40:
-		power -= adventurers[rng.rand_weighted([1,53,30,10,5,1])]
+		power += adventurers[rng.rand_weighted([1,53,30,10,5,1])]
 	elif rep < 80:
-		power -= adventurers[rng.rand_weighted([1,38,30,16,11,4])]
+		power += adventurers[rng.rand_weighted([1,38,30,16,11,4])]
 	elif rep < 120:
-		power -= adventurers[rng.rand_weighted([1,18,30,24,19,8])]
+		power += adventurers[rng.rand_weighted([1,18,30,24,19,8])]
 	elif rep < 160:
-		power -= adventurers[rng.rand_weighted([1,1,28,32,26,12])]
+		power += adventurers[rng.rand_weighted([1,1,28,32,26,12])]
 	elif rep < 200:
-		power -= adventurers[rng.rand_weighted([1,1,8,40,34,16])]
+		power += adventurers[rng.rand_weighted([1,1,8,40,34,16])]
 	else:
-		power -= adventurers[rng.rand_weighted([1,1,1,30,45,21])]
+		power += adventurers[rng.rand_weighted([1,1,1,30,45,21])]
 
 func _on_npc_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Enter":
