@@ -5,13 +5,13 @@
 [resource]
 script = ExtResource("1_ugjka")
 npc_name = "Demon"
-dialogue = "Hi im a demon"
-agree_dialogue = "yess"
+dialogue = "Dungeon Master, my contract is nearly complete. Give me a tribute of gold, and I will unleash my true power. Refuse me, and I may reconsider my loyalty."
+agree_dialogue = "Thank you, my liege. Your trust will not go unrewarded!"
 agree_money = -10
 agree_power = 10
 agree_reputation = 10
 agree_kills = 1
-disagree_dialogue = "nooooo"
+disagree_dialogue = "You'll regret not keeping me happy! You don't deserve me!"
 disagree_money = 10
 disagree_power = -10
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"

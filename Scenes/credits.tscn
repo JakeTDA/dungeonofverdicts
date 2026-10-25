@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://danawnctvsuww"]
+
+[node name="Credits" type="Node2D" unique_id=1414538435]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1645536004]
+offset_left = -112.0
+offset_top = -98.0
+offset_right = 1308.0
+offset_bottom = 758.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1067013622]
+offset_left = 120.0
+offset_top = 8.0
+offset_right = 955.0
+offset_bottom = 613.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center]CREDITS
+
+Design - Jacob Pan & Jason Wang
+Code - Andrew Alekseyev & Naing Min Khant
+Art - Andrew Alekseyev
+
+Music - From OpenGameArt.org by maggie.beans3696"
+fit_content = true

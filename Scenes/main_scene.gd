@@ -199,14 +199,14 @@ func _set_dialogue():
 	if current_npc.npc_name == "Demon":
 		if request_num == 1:
 			if npc_state == "enter_dialogue":
-				$"NPC/Dialogue Container/Dialogue".text = "Dungeon Master, my contract is nearly complete. Give me a tribute of gold, and I will unleash my true power. Refuse me, and I may reconsider my loyalty."
+				$"NPC/Dialogue Container/Dialogue".text = ""
 				
 			elif npc_state == "exit_dialogue":
 				if affirmative_response:
-					$"NPC/Dialogue Container/Dialogue".text = "Thank you, my liege. Your trust will not go unrewarded!"
+					$"NPC/Dialogue Container/Dialogue".text = ""
 				
 				else:
-					$"NPC/Dialogue Container/Dialogue".text = "You'll regret not keeping me happy! You don't deserve me!"
+					$"NPC/Dialogue Container/Dialogue".text = ""
 		
 		if request_num == 2:
 			if npc_state == "enter_dialogue":
