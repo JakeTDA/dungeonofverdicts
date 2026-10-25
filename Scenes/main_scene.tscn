@@ -195,6 +195,16 @@ frame = 2
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Response Image" unique_id=2063829357]
 libraries/ = SubResource("AnimationLibrary_iacmt")
 
+[node name="Droplet Particles" type="CPUParticles2D" parent="." unique_id=1767212493]
+position = Vector2(-142, -642)
+amount = 1
+lifetime = 1.4
+emission_shape = 3
+emission_rect_extents = Vector2(24, 1)
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+color = Color(0.039215688, 0.35686275, 1, 1)
+
 [node name="NPC" type="Node2D" parent="." unique_id=230143685]
 position = Vector2(1200, 0)
 scale = Vector2(1.2, 1.2)
@@ -234,16 +244,6 @@ scroll_active = false
 [node name="Dialogue Timer" type="Timer" parent="NPC/Dialogue Container" unique_id=772450556]
 wait_time = 3.0
 one_shot = true
-
-[node name="Droplet Particles" type="CPUParticles2D" parent="." unique_id=1767212493]
-position = Vector2(-142, -642)
-amount = 1
-lifetime = 1.4
-emission_shape = 3
-emission_rect_extents = Vector2(24, 1)
-scale_amount_min = 10.0
-scale_amount_max = 10.0
-color = Color(0.039215688, 0.35686275, 1, 1)
 
 [connection signal="animation_finished" from="NPC/AnimationPlayer" to="." method="_on_npc_animation_finished"]
 [connection signal="timeout" from="NPC/Dialogue Container/Dialogue Timer" to="." method="_on_dialogue_timer_timeout"]
