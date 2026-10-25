@@ -38,7 +38,7 @@ var day = 1
 @onready var witchlist = [witch,witch2]
 #@onready var npclist = [demon,eyeball,monstercommander,skeleton,slime,spider,zombie]
 var npc_state : String = "next_npc_ready"
-var adventurers = [0,-3,-6,-9,-11,-15]
+var adventurers = [0,-1,-2,-4,-6,-8]
 var robberyevent = false
 var warringevent = false
 
