@@ -34,6 +34,7 @@ var affirmative_response : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$"Response Image/AnimationPlayer".play("Wiggle")
+	$"Stats Box/AnimationPlayer".play("Bob")
 	npc_appear()
 	print(day)
 	print(money)
@@ -45,6 +46,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$"Stats Box/Money Display".text = " [wave]" + str(money)
+	$"Stats Box/Power Display".text = " [shake]" + str(power)
+	$"Stats Box/Loyalty Display".text = " [rainbow]" + str(loyalty)
+	$"Stats Box/Kills Display".text = " [pulse]" + str(kills)
+	$"Stats Box/Reputation Display".text = " [wave]" + str(rep)
 	
 	if npc_state == "enter_dialogue":
 		$"NPC/Dialogue Container/Dialogue".visible_ratio = 1.1 - $"NPC/Dialogue Container/Dialogue Timer".time_left / $"NPC/Dialogue Container/Dialogue Timer".wait_time
