@@ -105,7 +105,7 @@ func npc_appear():
 	var i = RandomNumberGenerator.new()
 	var npc_num : int = i.randi_range(0,15)
 	
-	current_npc = npclist[npc_num]
+	current_npc = npclist[0]
 	if day % 4 == 0:
 		current_npc = demonmerchant
 	elif day % 7 == 0:
@@ -218,7 +218,6 @@ func _set_dialogue():
 			$"NPC/Dialogue Container/Dialogue".text = current_npc.agree_dialogue
 		else:
 			$"NPC/Dialogue Container/Dialogue".text = current_npc.disagree_dialogue
-	
 	
 	$"NPC/Dialogue Container/Dialogue".visible_ratio = 0.0
 	$"NPC/Dialogue Container/Dialogue Timer".start()

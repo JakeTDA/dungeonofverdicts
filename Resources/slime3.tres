@@ -4,4 +4,11 @@
 
 [resource]
 script = ExtResource("1_a3t6i")
+sprite_frame = 1
+dialogue = "Master! Adventurers keep dropping shiny things when they run away. Can I collect all the treasure scattered through the dungeon?"
+agree_dialogue = "I will make sure to bring it back to you!"
+agree_money = 25
+agree_loyalty = 5
+disagree_dialogue = "no shinies : ("
+disagree_loyalty = -3
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"
