@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_ugjka")
 npc_name = "Demon"
-dialogue = "Dungeon Master, my contract is nearly complete. Give me a tribute of gold, and I will unleash my true power. Refuse me, and I may reconsider my loyalty."
+dialogue = "Dungeon Master, my contract is nearly complete. Give me a tribute of gold, and I will unleash my true power. Refuse me, and I may reconsider my loyalty. (30 gold)"
 agree_dialogue = "Thank you, my liege. Your trust will not go unrewarded!"
 agree_money = -30
 agree_power = 20
