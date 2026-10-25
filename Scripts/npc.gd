@@ -2,6 +2,7 @@ class_name NPC
 extends Resource
 @export var npc_name : String
 @export var sprite_frame : int
+<<<<<<< HEAD
 @export var dialogue : String
 @export_group("Agree")
 @export var agree_dialogue : String
@@ -17,3 +18,5 @@ extends Resource
 @export var disagree_reputation: int
 @export var disagree_loyalty : int
 @export var disagree_kills : int
+=======
+>>>>>>> c0799230c2eb9baf37b21e5bdd1441de2a42804d
