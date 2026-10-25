@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="NPC" format=3 uid="uid://b5s7gljt6cnyu"]
-
-[ext_resource type="Script" uid="uid://bnr4vchrtqj2t" path="res://Scripts/npc.gd" id="1_o5uru"]
-
-[resource]
-script = ExtResource("1_o5uru")
-metadata/_custom_type_script = "uid://bnr4vchrtqj2t"
