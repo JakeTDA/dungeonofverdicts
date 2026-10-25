@@ -215,7 +215,7 @@ libraries/ = SubResource("AnimationLibrary_maf8m")
 [node name="Droplet Particles" type="CPUParticles2D" parent="." unique_id=1767212493]
 position = Vector2(-142, -642)
 amount = 1
-lifetime = 1.4000000000000001
+lifetime = 1.4
 emission_shape = 3
 emission_rect_extents = Vector2(24, 1)
 scale_amount_min = 10.0
