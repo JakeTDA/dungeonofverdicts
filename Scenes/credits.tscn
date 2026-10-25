@@ -1,26 +1,74 @@
 [gd_scene format=3 uid="uid://danawnctvsuww"]
 
-[node name="Credits" type="Node2D" unique_id=1414538435]
+[ext_resource type="Script" uid="uid://bfuk37m4f7pqg" path="res://Scripts/credits.gd" id="1_1bamb"]
+[ext_resource type="FontFile" uid="uid://i5cskqdi3h33" path="res://Assets/impact.ttf" id="1_r18jl"]
+[ext_resource type="Texture2D" uid="uid://biuj31x7v0nmm" path="res://Assets/Opening Scene Background.png" id="2_xelri"]
+[ext_resource type="FontFile" uid="uid://b4bcpac07y2gr" path="res://Assets/Impacted.ttf" id="4_uah1q"]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1645536004]
-offset_left = -112.0
-offset_top = -98.0
-offset_right = 1308.0
-offset_bottom = 758.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7emq5"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_803yc"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.22352941, 0.22352941, 0.22352941, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="Credits" type="Node2D" unique_id=1414538435]
+script = ExtResource("1_1bamb")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1863259237]
+zoom = Vector2(0.6, 0.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1610055747]
+texture = ExtResource("2_xelri")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1067013622]
-offset_left = 120.0
-offset_top = 8.0
-offset_right = 955.0
-offset_bottom = 613.0
+offset_left = -420.0
+offset_top = -419.0
+offset_right = 415.0
+offset_bottom = 186.0
 theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("1_r18jl")
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
-text = "[center]CREDITS
+text = "[center][wave]CREDITS
 
 Design - Jacob Pan & Jason Wang
 Code - Andrew Alekseyev & Naing Min Khant
 Art - Andrew Alekseyev
 
-Music - From OpenGameArt.org by maggie.beans3696"
+Music - From OpenGameArt.org by maggie.beans3696
+Agree Sound - From OpenGameArt.org by Fupi
+Disagree Sound - From OpenGameArt.org by DavidW
+
+"
 fit_content = true
+
+[node name="Start Button" type="Button" parent="." unique_id=275822484]
+offset_left = -230.0
+offset_top = 240.0
+offset_right = 238.0
+offset_bottom = 406.0
+theme_override_fonts/font = ExtResource("4_uah1q")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_7emq5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_803yc")
+text = "BACK"
+
+[connection signal="pressed" from="Start Button" to="." method="_on_start_button_pressed"]

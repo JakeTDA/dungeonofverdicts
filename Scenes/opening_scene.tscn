@@ -51,14 +51,26 @@ text = "[center][shake][color=red]DUNGEON [color=white]OF [color=red]VERDICTS"
 fit_content = true
 
 [node name="Start Button" type="Button" parent="." unique_id=315556846]
-offset_left = -230.0
-offset_top = 212.0
-offset_right = 238.0
-offset_bottom = 378.0
+offset_left = -232.0
+offset_top = 123.0
+offset_right = 236.0
+offset_bottom = 289.0
 theme_override_fonts/font = ExtResource("2_gfe25")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_00wqr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2pc80")
 text = "START"
 
+[node name="Credits Button" type="Button" parent="." unique_id=171516623]
+offset_left = -232.0
+offset_top = 337.0
+offset_right = 236.0
+offset_bottom = 503.0
+theme_override_fonts/font = ExtResource("2_gfe25")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_00wqr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2pc80")
+text = "CREDITS"
+
 [connection signal="pressed" from="Start Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Credits Button" to="." method="_on_credits_button_pressed"]

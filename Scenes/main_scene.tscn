@@ -3,9 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://o2xt1anejcf6" path="res://Assets/Main Scene.png" id="1_52fb6"]
 [ext_resource type="Script" uid="uid://cau2f4l8ffbh8" path="res://Scenes/main_scene.gd" id="1_jv6wh"]
 [ext_resource type="Texture2D" uid="uid://cabrpowfobscd" path="res://Assets/YesNo Response.png" id="2_6l7je"]
+[ext_resource type="AudioStream" uid="uid://diaevr3apg34" path="res://Assets/bell.wav" id="4_huasi"]
 [ext_resource type="Texture2D" uid="uid://dyrgoth7jqaej" path="res://Assets/NPC Characters.png" id="4_x6ack"]
 [ext_resource type="Texture2D" uid="uid://busxhxoyubkkp" path="res://Assets/NPC Dialogue Box.png" id="5_6ev3c"]
+[ext_resource type="AudioStream" uid="uid://cda7j3vuamj37" path="res://Assets/caught.wav" id="5_m1efj"]
 [ext_resource type="FontFile" uid="uid://b5sswxo3ej3u4" path="res://Assets/BunnyCartoon-6RD3Y.otf" id="6_maf8m"]
+[ext_resource type="AudioStream" uid="uid://bgcwucopo3yd8" path="res://Assets/piano.mp3" id="7_maf8m"]
 
 [sub_resource type="Animation" id="Animation_jv6wh"]
 length = 0.001
@@ -195,6 +198,13 @@ frame = 2
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Response Image" unique_id=2063829357]
 libraries/ = SubResource("AnimationLibrary_iacmt")
 
+[node name="Agree Sound" type="AudioStreamPlayer" parent="Response Image" unique_id=2143957143]
+stream = ExtResource("4_huasi")
+
+[node name="Disagree Sound" type="AudioStreamPlayer" parent="Response Image" unique_id=1138494874]
+stream = ExtResource("5_m1efj")
+volume_db = 10.0
+
 [node name="Droplet Particles" type="CPUParticles2D" parent="." unique_id=1767212493]
 position = Vector2(-142, -642)
 amount = 1
@@ -244,6 +254,11 @@ scroll_active = false
 [node name="Dialogue Timer" type="Timer" parent="NPC/Dialogue Container" unique_id=772450556]
 wait_time = 3.0
 one_shot = true
+
+[node name="Background Music" type="AudioStreamPlayer" parent="." unique_id=1703789331]
+stream = ExtResource("7_maf8m")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="animation_finished" from="NPC/AnimationPlayer" to="." method="_on_npc_animation_finished"]
 [connection signal="timeout" from="NPC/Dialogue Container/Dialogue Timer" to="." method="_on_dialogue_timer_timeout"]

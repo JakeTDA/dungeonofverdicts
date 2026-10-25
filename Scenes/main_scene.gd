@@ -130,6 +130,7 @@ func accept():
 	$"Response Image/AnimationPlayer".speed_scale = 5.0
 	affirmative_response = true
 	$"Response Image/Sprite2D".frame = 0
+	$"Response Image/Agree Sound".play()
 	_set_dialogue()
 	
 
@@ -140,6 +141,8 @@ func decline():
 	$"Response Image/AnimationPlayer".speed_scale = 5.0
 	affirmative_response = false
 	$"Response Image/Sprite2D".frame = 1
+	$"Response Image/Disagree Sound".play()
+	
 	money += current_npc.agree_money
 	power += current_npc.agree_power
 	rep += current_npc.agree_reputation
