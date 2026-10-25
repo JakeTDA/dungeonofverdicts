@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPC" format=3 uid="uid://doulur0d53jr5"]
+
+[ext_resource type="Script" uid="uid://bnr4vchrtqj2t" path="res://Scripts/npc.gd" id="1_ugjka"]
+
+[resource]
+script = ExtResource("1_ugjka")
+npc_name = "Demon"
+dialogue = "Hi im a demon"
+agree_dialogue = "yess"
+disagree_dialogue = "nooooo"
+metadata/_custom_type_script = "uid://bnr4vchrtqj2t"

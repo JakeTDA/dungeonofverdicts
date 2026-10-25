@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="NPC" format=3 uid="uid://dsmq27r0deu7r"]
+
+[ext_resource type="Script" uid="uid://bnr4vchrtqj2t" path="res://Scripts/npc.gd" id="1_r36oe"]
+
+[resource]
+script = ExtResource("1_r36oe")
+npc_name = "Monster Commander"
+metadata/_custom_type_script = "uid://bnr4vchrtqj2t"
