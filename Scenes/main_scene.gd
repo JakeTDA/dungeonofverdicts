@@ -170,15 +170,15 @@ func decline():
 
 func adventurer():
 	var rng = RandomNumberGenerator.new()
-	if rep < 40:
+	if rep < 10:
 		power += adventurers[rng.rand_weighted([1,53,30,10,5,1])]
-	elif rep < 80:
+	elif rep < 20:
 		power += adventurers[rng.rand_weighted([1,38,30,16,11,4])]
-	elif rep < 120:
+	elif rep < 30:
 		power += adventurers[rng.rand_weighted([1,18,30,24,19,8])]
-	elif rep < 160:
+	elif rep < 40:
 		power += adventurers[rng.rand_weighted([1,1,28,32,26,12])]
-	elif rep < 200:
+	elif rep < 50:
 		power += adventurers[rng.rand_weighted([1,1,8,40,34,16])]
 	else:
 		power += adventurers[rng.rand_weighted([1,1,1,30,45,21])]
