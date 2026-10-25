@@ -6,4 +6,7 @@
 script = ExtResource("1_u0o3b")
 npc_name = "Eyeball"
 sprite_frame = 4
+dialogue = "Master, I have spotted a powerful adventurer party approaching our dungeon. Allow me to study their weaknesses, and I shall guide our monsters to victory!"
+agree_dialogue = "Affirmative master! You won't regret this!"
+disagree_dialogue = "Are you sure master? They're coming whether I study them or not..."
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"

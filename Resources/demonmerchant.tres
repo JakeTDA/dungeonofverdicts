@@ -6,4 +6,7 @@
 script = ExtResource("1_1j1xr")
 npc_name = "Demon Merchant"
 sprite_frame = 7
+dialogue = "Ah, Dungeon Master! I have rare artifacts, cursed weapons, and enchanted armor. Everything has a price. Care to make a deal? Only 40 gold!"
+agree_dialogue = "I have a very fine cursed weapon here for you! Very powerful, and equally famous. This one will write your name in the history books!"
+disagree_dialogue = "Ah well, I'm sure there are more than enough people who would be happy to take this."
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"
