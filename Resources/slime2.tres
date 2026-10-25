@@ -4,4 +4,14 @@
 
 [resource]
 script = ExtResource("1_brklu")
+sprite_frame = 1
+dialogue = "Master, I accidentally ate your demon hound, and I’m not feeling so good. Is it ok if you give me some money to go see the witch doctor?"
+agree_dialogue = "Thank you! I will make sure to spread word of your generosity!"
+agree_money = -10
+agree_power = 3
+agree_reputation = 2
+agree_loyalty = 5
+disagree_dialogue = ">:("
+disagree_power = -5
+disagree_loyalty = -5
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"

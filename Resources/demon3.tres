@@ -4,4 +4,13 @@
 
 [resource]
 script = ExtResource("1_kfikm")
+dialogue = "Dungeon Master, I have discovered an adventurer camp filled with gold. Let me raid it before they return, and we can claim their treasure!"
+agree_dialogue = "MONEY MONEY MONEY"
+agree_money = 60
+agree_power = -1
+agree_reputation = 2
+agree_loyalty = 8
+agree_kills = 3
+disagree_dialogue = "On your order, my liege."
+disagree_loyalty = -4
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"

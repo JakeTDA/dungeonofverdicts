@@ -6,4 +6,12 @@
 script = ExtResource("1_mpoik")
 npc_name = "Slime"
 sprite_frame = 1
+dialogue = "Master! I found a way to split into five smaller slimes! I just need some enchanted water. Can I have some, please?"
+agree_dialogue = "Thank you Thank you!"
+agree_money = -15
+agree_power = 5
+agree_reputation = 1
+agree_loyalty = 5
+disagree_dialogue = ":("
+disagree_loyalty = -2
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"

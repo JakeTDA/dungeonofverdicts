@@ -6,4 +6,11 @@
 script = ExtResource("1_rqjw4")
 npc_name = "Skeleton"
 sprite_frame = 2
+dialogue = "The adventurers keep stealing our bones! Allow me to collect bones from the bodies we killed to fix our troops."
+agree_dialogue = "I will send out a gathering team to pick them up."
+agree_power = 5
+agree_reputation = 2
+agree_loyalty = 7
+disagree_power = 2
+disagree_loyalty = -1
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"

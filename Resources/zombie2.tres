@@ -4,4 +4,6 @@
 
 [resource]
 script = ExtResource("1_bexjr")
+sprite_frame = 5
+dialogue = "Rrrrr… Master, can we throw a monster party on Halloween? Everyone has been talking about it"
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"

@@ -4,4 +4,12 @@
 
 [resource]
 script = ExtResource("1_6hvt4")
+sprite_frame = 2
+dialogue = "Master, I can combine the remains of our fallen troops into a single mighty warrior. Permit me to build the Bone Colossus!"
+agree_money = -20
+agree_power = 20
+agree_reputation = 5
+agree_loyalty = 10
+disagree_reputation = 1
+disagree_loyalty = -5
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"
