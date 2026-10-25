@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://u3pkqtqi5lk7"]
+
+[ext_resource type="Script" uid="uid://bfuk37m4f7pqg" path="res://Scripts/credits.gd" id="1_xq13i"]
+[ext_resource type="Texture2D" uid="uid://d3hj2pt7ujb8u" path="res://Assets/Lose Screen 1.png" id="2_22y6t"]
+[ext_resource type="FontFile" uid="uid://b4bcpac07y2gr" path="res://Assets/Impacted.ttf" id="3_r6vee"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7emq5"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_803yc"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.22352941, 0.22352941, 0.22352941, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="Credits" type="Node2D" unique_id=1414538435]
+script = ExtResource("1_xq13i")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1863259237]
+zoom = Vector2(0.6, 0.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1610055747]
+texture = ExtResource("2_22y6t")
+
+[node name="Start Button" type="Button" parent="." unique_id=275822484]
+offset_left = 462.0
+offset_top = -66.0
+offset_right = 930.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("3_r6vee")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_7emq5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_803yc")
+text = "BACK"
+
+[connection signal="pressed" from="Start Button" to="." method="_on_start_button_pressed"]
