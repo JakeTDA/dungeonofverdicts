@@ -33,10 +33,6 @@ var day = 1
 @onready var witch = preload("res://Resources/witch.tres") 
 @onready var witch2 = preload("res://Resources/witch2.tres") 
 
-@onready var monstercommanderevent = preload("res://Resources/monstercommanderevent.tres")
-@onready var eyeballevent = preload("res://Resources/eyeballevent.tres")
-@onready var monstercommandercurseevent = preload("res://Resources/monstercommandercurseevent.tres")
-@onready var monstercommandercurseevent2 = preload("res://Resources/monstercommandercurseevent2.tres")
 @onready var npclist = [demon,demon2,demon3,eyeball,eyeball2,eyeball3,monstercommander,monstercommander2,skeleton,skeleton2,slime,slime2,slime3,spider,zombie,zombie2]
 @onready var demonmerchantlist = [demonmerchant,demonmerchant2,demonmerchant3]
 @onready var witchlist = [witch,witch2]
@@ -84,7 +80,7 @@ func _process(delta: float) -> void:
 		elif Input.is_action_just_pressed("decline"):
 			decline()
 	if npc_state == "waiting_to_leave":
-		if Input.is_action_just_pressed("accept") or Input.is_action_just_pressed("decline"):
+		if Input.is_anything_pressed():
 			$NPC/AnimationPlayer.play("Exit")
 			$"Response Image".visible = false
 			$"NPC/Dialogue Container".visible = false
@@ -95,19 +91,22 @@ func _process(delta: float) -> void:
 	
 	
 func npc_appear():
+	if power <= 0:
+		#bad ending scene
+		pass
+	elif loyalty <= 0:
+		#bad ending scene
+		pass
+	elif day >= 30:
+		#good ending scene
+		pass
 	if day > 1:
 		adventurer()
 	var i = RandomNumberGenerator.new()
 	var npc_num : int = i.randi_range(0,15)
+	
 	current_npc = npclist[npc_num]
-	if robberyevent == true:
-		print("robbery event on")
-		current_npc.npc_name = "Suspect"
-		current_npc.dialogue = "Wait, I'm not guilty, please let me go!"
-		current_npc.agree_dialogue = "Thank you.. Thank you!"
-	elif day == 10:
-		current_npc = monstercommanderevent
-	elif day % 4 == 0:
+	if day % 4 == 0:
 		current_npc = demonmerchant
 	elif day % 7 == 0:
 		current_npc = witch
@@ -122,19 +121,6 @@ func npc_appear():
 	# l is index of frame, change sprite using the index, look at npclist for the list
 	
 func accept():
-	if robberyevent == true:
-		var rng = RandomNumberGenerator.new()
-		var luck = rng.randi_range(0,1)
-		if luck == 0:
-			current_npc.agree_power = -20
-			current_npc.agree_loyalty = -20
-		elif luck == 1:
-			current_npc.agree_money = 50
-			current_npc.agree_power = 10	
-		robberyevent = false	
-		print("robberyevent off")
-	if day == 10:
-		robberyevent = true
 		
 	npc_state = "exit_dialouge"
 	$"NPC/Dialogue Container/Dialogue Timer".start()	
@@ -169,11 +155,11 @@ func decline():
 	$"Response Image/Sprite2D".frame = 1
 	$"Response Image/Disagree Sound".play()
 	
-	money += current_npc.agree_money
-	power += current_npc.agree_power
-	rep += current_npc.agree_reputation
-	loyalty += current_npc.agree_loyalty
-	kills += current_npc.agree_kills
+	money += current_npc.disagree_money
+	power += current_npc.disagree_power
+	rep += current_npc.disagree_reputation
+	loyalty += current_npc.disagree_loyalty
+	kills += current_npc.disagree_kills
 	day += 1
 	print(day)
 	print(money)
