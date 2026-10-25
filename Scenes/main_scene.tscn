@@ -185,6 +185,12 @@ texture = ExtResource("1_52fb6")
 position = Vector2(-689, 283)
 texture = ExtResource("3_mai8y")
 
+[node name="Money" type="RichTextLabel" parent="Stats Box" unique_id=1771486652]
+offset_left = 689.0
+offset_top = -283.0
+offset_right = 729.0
+offset_bottom = -243.0
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=705852329]
 zoom = Vector2(0.6, 0.6)
 
