@@ -54,6 +54,7 @@ var affirmative_response : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$"Response Image/AnimationPlayer".play("Wiggle")
+	$"Stats Box/AnimationPlayer".play("Bob")
 	npc_appear()
 	print(day)
 	print(money)
@@ -65,6 +66,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$"Stats Box/Money Display".text = " [wave]" + str(money)
+	$"Stats Box/Power Display".text = " [shake]" + str(power)
+	$"Stats Box/Loyalty Display".text = " [rainbow]" + str(loyalty)
+	$"Stats Box/Kills Display".text = " [pulse]" + str(kills)
+	$"Stats Box/Reputation Display".text = " [wave]" + str(rep)
 	
 	if npc_state == "enter_dialogue":
 		$"NPC/Dialogue Container/Dialogue".visible_ratio = 1.1 - $"NPC/Dialogue Container/Dialogue Timer".time_left / $"NPC/Dialogue Container/Dialogue Timer".wait_time
@@ -219,18 +225,15 @@ func _on_dialogue_timer_timeout() -> void:
 
 
 func _set_dialogue():
-	if current_npc.npc_name == "Demon":
-		if request_num == 1:
-			if npc_state == "enter_dialogue":
-				$"NPC/Dialogue Container/Dialogue".text = ""
-				
-			elif npc_state == "exit_dialogue":
-				if affirmative_response:
-					$"NPC/Dialogue Container/Dialogue".text = ""
-				
-				else:
-					$"NPC/Dialogue Container/Dialogue".text = ""
+	if npc_state == "enter_dialogue":
+		$"NPC/Dialogue Container/Dialogue".text = current_npc.dialogue
+	elif npc_state == "exit_dialogue":
+		if affirmative_response:
+			$"NPC/Dialogue Container/Dialogue".text = current_npc.agree_dialogue
+		else:
+			$"NPC/Dialogue Container/Dialogue".text = current_npc.disagree_dialogue
 		
+	
 		if request_num == 2:
 			if npc_state == "enter_dialogue":
 				$"NPC/Dialogue Container/Dialogue".text = "Dungeon Master, I have discovered an ancient temple of the Serpent Lodge beneath the dungeon. Give me gold to awaken the temple, and I shall forge powerful demons for your army!"
