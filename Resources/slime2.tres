@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_brklu")
 sprite_frame = 1
-dialogue = "Master, I accidentally ate your demon hound, and I’m not feeling so good. Is it ok if you give me some money to go see the witch doctor? (20 Gold)"
+dialogue = "Master, I accidentally ate your demon hound, and I’m not feeling so good. Is it ok if you give me some money to go see the witch doctor? (10 Gold)"
 agree_dialogue = "Thank you! I will make sure to spread word of your generosity!"
 agree_money = -10
 agree_power = 3

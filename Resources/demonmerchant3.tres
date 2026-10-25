@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_qfjc8")
 sprite_frame = 7
-dialogue = "Hello Dungeon Master! Would you like to try this new drink I acquired from the human world?"
+dialogue = "Hello Dungeon Master! Would you like to try this new drink I acquired from the human world? (50 Gold)"
 agree_dialogue = "Fortune favors the bold! He-he-he..."
 agree_money = -50
 agree_power = 25

@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_hjft6")
 sprite_frame = 4
-dialogue = "Master, I’ve been having trouble seeing lately. May I humbly request some money for a monocle?"
+dialogue = "Master, I’ve been having trouble seeing lately. May I humbly request some money for a monocle? (25 Gold)"
 agree_dialogue = "Master, your generocity knows no bounds! I will serve you until my last blink!"
 agree_money = -25
 agree_power = 4

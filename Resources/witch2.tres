@@ -5,4 +5,11 @@
 [resource]
 script = ExtResource("1_ud47i")
 sprite_frame = 8
+dialogue = "Come closer, Dungeon Master. I have a special crystal that you might be interested in. For a small fee, you can have this crystal that can reveal your enemies' weaknesses. Interested? (20 Gold)"
+agree_dialogue = "Ah, a wise investment, Master! I knew you would recognize its value. This little crystal will reveal the weaknesses of incoming adventurer teams to prepare effective defenses."
+agree_money = -20
+agree_power = 12
+agree_loyalty = 10
+disagree_dialogue = "...I see. You reject my special offer? How disappointing, Master. I thought you were clever enough to recognize a valuable opportunity. Very well, keep your gold."
+disagree_loyalty = -40
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"
