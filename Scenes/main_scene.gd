@@ -7,20 +7,40 @@ var power = 20
 var rep = 0
 var loyalty = 20
 var kills = 0
-var day = 10
+var day = 1
 
 
-@onready var demon = load("res://Resources/demon.tres") # 0
-@onready var demonmerchant = load("res://Resources/demonmerchant.tres") # 1
-@onready var eyeball = load("res://Resources/eyeball.tres") # 2
-@onready var monstercommander = load("res://Resources/monstercommander.tres") # 4
-@onready var skeleton = load("res://Resources/skeleton.tres") # 5
-@onready var slime = load("res://Resources/slime.tres") # 6
-@onready var spider = load("res://Resources/spider.tres") # 7
-@onready var witch = load("res://Resources/witch.tres") # 8
-@onready var zombie = load("res://Resources/zombie.tres") # 9
-@onready var monstercommanderevent = load("res://Resources/monstercommanderevent.tres")
-@onready var npclist = [demon,eyeball,monstercommander,skeleton,slime,spider,zombie]
+@onready var demon = preload("res://Resources/demon.tres") # 0
+@onready var demon2 = preload("res://Resources/demon2.tres")
+@onready var demon3 = preload("res://Resources/demon3.tres")
+@onready var eyeball = preload("res://Resources/eyeball.tres") # 2
+@onready var eyeball2 = preload("res://Resources/eyeball2.tres")
+@onready var eyeball3 = preload("res://Resources/eyeball3.tres")
+@onready var monstercommander = preload("res://Resources/monstercommander.tres") # 4
+@onready var monstercommander2 = preload("res://Resources/monstercommander2.tres")
+@onready var skeleton = preload("res://Resources/skeleton.tres") # 5
+@onready var skeleton2 = preload("res://Resources/skeleton2.tres")
+@onready var slime = preload("res://Resources/slime.tres") # 6
+@onready var slime2 = preload("res://Resources/slime2.tres")
+@onready var slime3 = preload("res://Resources/slime3.tres")
+@onready var spider = preload("res://Resources/spider.tres") # 7
+@onready var zombie = preload("res://Resources/zombie.tres") # 9
+@onready var zombie2 = preload("res://Resources/zombie2.tres")
+
+@onready var demonmerchant = preload("res://Resources/demonmerchant.tres") 
+@onready var demonmerchant2 = preload("res://Resources/demonmerchant2.tres")
+@onready var demonmerchant3 = preload("res://Resources/demonmerchant3.tres")
+@onready var witch = preload("res://Resources/witch.tres") 
+@onready var witch2 = preload("res://Resources/witch2.tres") 
+
+@onready var monstercommanderevent = preload("res://Resources/monstercommanderevent.tres")
+@onready var eyeballevent = preload("res://Resources/eyeballevent.tres")
+@onready var monstercommandercurseevent = preload("res://Resources/monstercommandercurseevent.tres")
+@onready var monstercommandercurseevent2 = preload("res://Resources/monstercommandercurseevent2.tres")
+@onready var npclist = [demon,demon2,demon3,eyeball,eyeball2,eyeball3,monstercommander,monstercommander2,skeleton,skeleton2,slime,slime2,slime3,spider,zombie,zombie2]
+@onready var demonmerchantlist = [demonmerchant,demonmerchant2,demonmerchant3]
+@onready var witchlist = [witch,witch2]
+#@onready var npclist = [demon,eyeball,monstercommander,skeleton,slime,spider,zombie]
 var npc_state : String = "next_npc_ready"
 var adventurers = [0,-3,-6,-9,-11,-15]
 var robberyevent = false
@@ -72,7 +92,7 @@ func npc_appear():
 	if day > 1:
 		adventurer()
 	var i = RandomNumberGenerator.new()
-	var npc_num : int = i.randi_range(0,6)
+	var npc_num : int = i.randi_range(0,15)
 	current_npc = npclist[npc_num]
 	if robberyevent == true:
 		print("robbery event on")

@@ -1,0 +1,269 @@
+[gd_scene format=3 uid="uid://d2c60axkj7ldj"]
+
+[ext_resource type="Texture2D" uid="uid://o2xt1anejcf6" path="res://Assets/Main Scene.png" id="1_52fb6"]
+[ext_resource type="Script" uid="uid://cau2f4l8ffbh8" path="res://Scenes/main_scene.gd" id="1_jv6wh"]
+[ext_resource type="Texture2D" uid="uid://cabrpowfobscd" path="res://Assets/YesNo Response.png" id="2_6l7je"]
+[ext_resource type="Texture2D" uid="uid://bw2w6q8rrp0w7" path="res://Assets/Stats Box.png" id="3_mai8y"]
+[ext_resource type="AudioStream" uid="uid://diaevr3apg34" path="res://Assets/bell.wav" id="4_huasi"]
+[ext_resource type="Texture2D" uid="uid://dyrgoth7jqaej" path="res://Assets/NPC Characters.png" id="4_x6ack"]
+[ext_resource type="Texture2D" uid="uid://busxhxoyubkkp" path="res://Assets/NPC Dialogue Box.png" id="5_6ev3c"]
+[ext_resource type="AudioStream" uid="uid://cda7j3vuamj37" path="res://Assets/caught.wav" id="5_m1efj"]
+[ext_resource type="FontFile" uid="uid://b5sswxo3ej3u4" path="res://Assets/BunnyCartoon-6RD3Y.otf" id="6_maf8m"]
+[ext_resource type="AudioStream" uid="uid://bgcwucopo3yd8" path="res://Assets/piano.mp3" id="7_maf8m"]
+
+[sub_resource type="Animation" id="Animation_jv6wh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_x6ack"]
+resource_name = "Wiggle"
+length = 1.33
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33, 0.66, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.03490658503988659, 0.0, -0.03490658503988659]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iacmt"]
+_data = {
+&"RESET": SubResource("Animation_jv6wh"),
+&"Wiggle": SubResource("Animation_x6ack")
+}
+
+[sub_resource type="Animation" id="Animation_iacmt"]
+resource_name = "Enter"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1400, 0), Vector2(200, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.08726646, 0.0, -0.08726646, 0.0, 0.08726646, 0.0, -0.08726646, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NPC Sprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_maf8m"]
+resource_name = "Exit"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(200, 0), Vector2(1400, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.08726646, 0.0, 0.08726646, 0.0, -0.08726646, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NPC Sprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6ev3c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1200, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NPC Sprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_maf8m"]
+_data = {
+&"Enter": SubResource("Animation_iacmt"),
+&"Exit": SubResource("Animation_maf8m"),
+&"RESET": SubResource("Animation_6ev3c")
+}
+
+[node name="Main Scene" type="Node2D" unique_id=1674402163]
+script = ExtResource("1_jv6wh")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1761921268]
+texture = ExtResource("1_52fb6")
+
+[node name="Stats Box" type="Sprite2D" parent="." unique_id=175566294]
+position = Vector2(-689, 283)
+texture = ExtResource("3_mai8y")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=705852329]
+zoom = Vector2(0.6, 0.6)
+
+[node name="Response Image" type="Node2D" parent="." unique_id=1432075937]
+visible = false
+position = Vector2(-684.99994, -240)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Response Image" unique_id=2126290992]
+position = Vector2(168.9999, 143.00002)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_6l7je")
+hframes = 3
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Response Image" unique_id=2063829357]
+libraries/ = SubResource("AnimationLibrary_iacmt")
+
+[node name="Agree Sound" type="AudioStreamPlayer" parent="Response Image" unique_id=2143957143]
+stream = ExtResource("4_huasi")
+
+[node name="Disagree Sound" type="AudioStreamPlayer" parent="Response Image" unique_id=1138494874]
+stream = ExtResource("5_m1efj")
+volume_db = 10.0
+
+[node name="Droplet Particles" type="CPUParticles2D" parent="." unique_id=1767212493]
+position = Vector2(-142, -642)
+amount = 1
+lifetime = 1.4
+emission_shape = 3
+emission_rect_extents = Vector2(24, 1)
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+color = Color(0.039215688, 0.35686275, 1, 1)
+
+[node name="NPC" type="Node2D" parent="." unique_id=230143685]
+position = Vector2(1200, 0)
+scale = Vector2(1.2, 1.2)
+
+[node name="NPC Sprite" type="Sprite2D" parent="NPC" unique_id=1388853748]
+position = Vector2(-2, 100)
+texture = ExtResource("4_x6ack")
+flip_h = true
+vframes = 10
+frame = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NPC" unique_id=1256958879]
+libraries/ = SubResource("AnimationLibrary_maf8m")
+
+[node name="Dialogue Container" type="Node2D" parent="NPC" unique_id=689535188]
+visible = false
+position = Vector2(-23.333332, -70)
+
+[node name="Dialogue Box Sprite" type="Sprite2D" parent="NPC/Dialogue Container" unique_id=793741750]
+position = Vector2(16.666626, -220)
+scale = Vector2(0.4537037, 0.29552472)
+texture = ExtResource("5_6ev3c")
+
+[node name="Dialogue" type="RichTextLabel" parent="NPC/Dialogue Container" unique_id=153012989]
+offset_left = -260.0
+offset_top = -368.3333
+offset_right = 325.83337
+offset_bottom = -113.33331
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_maf8m")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+fit_content = true
+scroll_active = false
+
+[node name="Dialogue Timer" type="Timer" parent="NPC/Dialogue Container" unique_id=772450556]
+wait_time = 3.0
+one_shot = true
+
+[node name="Background Music" type="AudioStreamPlayer" parent="." unique_id=1703789331]
+stream = ExtResource("7_maf8m")
+volume_db = -10.0
+autoplay = true
+
+[connection signal="animation_finished" from="NPC/AnimationPlayer" to="." method="_on_npc_animation_finished"]
+[connection signal="timeout" from="NPC/Dialogue Container/Dialogue Timer" to="." method="_on_dialogue_timer_timeout"]
