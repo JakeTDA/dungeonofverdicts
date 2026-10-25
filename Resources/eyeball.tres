@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_u0o3b")
 npc_name = "Eyeball"
+sprite_frame = 4
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"

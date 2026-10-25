@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_r36oe")
 npc_name = "Monster Commander"
+sprite_frame = 6
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"

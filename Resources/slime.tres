@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_mpoik")
 npc_name = "Slime"
+sprite_frame = 1
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"

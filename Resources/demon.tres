@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_ugjka")
 npc_name = "Demon"
+sprite_frame = 1
 dialogue = "Hi im a demon"
 agree_dialogue = "yess"
 disagree_dialogue = "nooooo"

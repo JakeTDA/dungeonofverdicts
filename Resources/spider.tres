@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_pt0mt")
 npc_name = "Spider"
+sprite_frame = 3
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"

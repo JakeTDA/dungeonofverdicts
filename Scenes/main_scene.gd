@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("accept"):
 		print("hi")
 		accept()
-	if Input.is_action_just_pressed("decline"):
+	elif Input.is_action_just_pressed("decline"):
 		decline()
 	pass
 	

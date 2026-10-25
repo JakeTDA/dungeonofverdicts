@@ -1,7 +1,7 @@
 class_name NPC
 extends Resource
 @export var npc_name : String
-@export var sprite : Texture2D
+@export var sprite_frame : int
 @export var dialogue : String
 @export_group("Agree")
 @export var agree_dialogue : String

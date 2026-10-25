@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_ee44m")
 npc_name = "Zombie"
+sprite_frame = 5
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"
