@@ -19,12 +19,13 @@ var day = 1
 @onready var spider = load("res://Resources/spider.tres") # 7
 @onready var witch = load("res://Resources/witch.tres") # 8
 @onready var zombie = load("res://Resources/zombie.tres") # 9
+@onready var monstercommanderevent = load("res://Resources/monstercommanderevent.tres")
 @onready var npclist = [demon,eyeball,monstercommander,skeleton,slime,spider,zombie]
 @onready var specialnpclist = [witch,demonmerchant]
-
 var npc_state : String = "next_npc_ready"
-var game_state : String = "normal"
 var adventurers = [0,-3,-6,-9,-11,-15]
+var robberyevent = false
+var warringevent = false
 
 var current_npc : Resource
 # Called when the node enters the scene tree for the first time.
@@ -56,11 +57,18 @@ func npc_appear():
 	var i = RandomNumberGenerator.new()
 	var rng : int = i.randi_range(0,6)
 	current_npc = npclist[rng]
-	if day % 4 == 0:
+	if robberyevent == true:
+		current_npc.npc_name = "Suspect"
+		current_npc.dialogue = "Wait, I'm not guilty, please let me go!"
+		current_npc.agree_dialogue = "Thank you.. Thank you!"
+	elif day == 10:
+		current_npc = monstercommanderevent
+	elif day % 4 == 0:
 		current_npc = demonmerchant
 	elif day % 7 == 0:
 		current_npc = witch
 	print(current_npc.npc_name)
+	print(current_npc.dialogue)
 	
 	npc_state = "entering"
 	$NPC/Sprite2D.frame = current_npc.sprite_frame
@@ -68,6 +76,11 @@ func npc_appear():
 	# l is index of frame, change sprite using the index, look at npclist for the list
 	
 func accept():
+	if robberyevent == true:
+		
+	if day == 10:
+		robberyevent = true
+		
 	npc_state = "exit_dialouge"
 	$"NPC/Dialogue Timer".start()	
 	$"Response Image/Sprite2D".frame = 0
@@ -92,7 +105,7 @@ func decline():
 	power += current_npc.agree_power
 	rep += current_npc.agree_reputation
 	loyalty += current_npc.agree_loyalty
-	kills += current_npc.agree_kills
+	kills += current_npc.agree_killsgit 
 	day += 1
 	print(day)
 	print(money)
