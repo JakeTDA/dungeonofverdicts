@@ -4,4 +4,13 @@
 
 [resource]
 script = ExtResource("1_630qp")
+sprite_frame = 6
+dialogue = "My lord, can you raise my salary, please? I’ve been working for you for years already"
+agree_dialogue = "Thank you, my lord. Your generosity will not go to waste. I'll increase training standards, improve troop coordination, and ensure our defenses operate at maximum efficiency."
+agree_money = -40
+agree_power = 30
+agree_loyalty = 40
+disagree_dialogue = "... understand, my lord. I'll continue performing my assigned duties."
+disagree_power = -20
+disagree_loyalty = -35
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"

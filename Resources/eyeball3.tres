@@ -4,7 +4,12 @@
 
 [resource]
 script = ExtResource("1_8r3yv")
+sprite_frame = 4
 dialogue = "Master! I have detected a secret chamber beneath the dungeon. There may be an enormous treasure hidden inside, but the entrance is protected by an unknown ancient magic. Shall we investigate?"
 agree_dialogue = "We'll get to the bottom of that chamber if it's the last thing we do!"
+agree_money = 100
+agree_power = -15
+agree_reputation = 2
+agree_loyalty = -10
 disagree_dialogue = "Some things are better off staying secret. After all, ignorance is bliss!"
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"

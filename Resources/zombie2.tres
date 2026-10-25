@@ -6,8 +6,10 @@
 script = ExtResource("1_bexjr")
 sprite_frame = 5
 dialogue = "Rrrrr… Master, can we throw a monster party on Halloween? Everyone has been talking about it. (20 Gold)"
+agree_dialogue = "Yaaay... party! Rrrrr... thank you, Master. Food... games... monster friends... happy. You are... good ruler."
 agree_money = -20
 agree_power = 5
 agree_loyalty = 6
+disagree_dialogue = "Oh... no party? Rrrrr... sad. Was... hoping for snacks. And games... Maybe next time... Master."
 disagree_loyalty = -5
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"

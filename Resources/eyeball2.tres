@@ -4,7 +4,12 @@
 
 [resource]
 script = ExtResource("1_hjft6")
+sprite_frame = 4
 dialogue = "Master, I’ve been having trouble seeing lately. May I humbly request some money for a monocle?"
 agree_dialogue = "Master, your generocity knows no bounds! I will serve you until my last blink!"
+agree_money = -25
+agree_power = 4
+agree_loyalty = 10
 disagree_dialogue = "I'll try my best to do without master...but I may not be able to perform as well"
+disagree_loyalty = -15
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"

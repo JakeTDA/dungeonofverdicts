@@ -6,4 +6,16 @@
 script = ExtResource("1_r36oe")
 npc_name = "Monster Commander"
 sprite_frame = 6
+dialogue = "My lord, a large party of adventurers is gathering outside. I recommend mobilizing our entire army and striking before they reach the entrance. Shall I prepare the troops?"
+agree_dialogue = "Understood, my lord. I will order the troops to launch a surprise attack."
+agree_money = 15
+agree_power = -3
+agree_reputation = 3
+agree_loyalty = 6
+agree_kills = 5
+disagree_dialogue = "As you command, my lord. I've canceled the offensive and redirected our resources toward reinforcing the dungeon."
+disagree_money = -10
+disagree_power = 4
+disagree_loyalty = 3
+disagree_kills = 1
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"

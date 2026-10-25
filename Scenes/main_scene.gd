@@ -201,8 +201,6 @@ func _on_dialogue_timer_timeout() -> void:
 		$"Response Image/Sprite2D".frame = 2
 		$"Response Image".visible = true
 		npc_state = "waiting_for_response"
-		
-	
 	
 	elif npc_state == "exit_dialogue":
 		npc_state = "waiting_to_leave"
