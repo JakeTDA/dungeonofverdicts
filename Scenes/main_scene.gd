@@ -7,7 +7,7 @@ var power = 20
 var rep = 0
 var loyalty = 20
 var kills = 0
-var day = 1
+var day = 10
 
 
 @onready var demon = load("res://Resources/demon.tres") # 0
