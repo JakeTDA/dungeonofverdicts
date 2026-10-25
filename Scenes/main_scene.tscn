@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://cau2f4l8ffbh8" path="res://Scenes/main_scene.gd" id="1_jv6wh"]
 [ext_resource type="Texture2D" uid="uid://cabrpowfobscd" path="res://Assets/YesNo Response.png" id="2_6l7je"]
 [ext_resource type="Texture2D" uid="uid://dyrgoth7jqaej" path="res://Assets/NPC Characters.png" id="4_x6ack"]
+[ext_resource type="Texture2D" uid="uid://busxhxoyubkkp" path="res://Assets/NPC Dialogue Box.png" id="5_6ev3c"]
+[ext_resource type="FontFile" uid="uid://b5sswxo3ej3u4" path="res://Assets/BunnyCartoon-6RD3Y.otf" id="6_maf8m"]
 
 [sub_resource type="Animation" id="Animation_jv6wh"]
 length = 0.001
@@ -73,7 +75,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:flip_h")
+tracks/2/path = NodePath("NPC Sprite:flip_h")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -113,7 +115,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:flip_h")
+tracks/2/path = NodePath("NPC Sprite:flip_h")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -152,7 +154,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:flip_h")
+tracks/2/path = NodePath("NPC Sprite:flip_h")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -192,17 +194,12 @@ frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Response Image" unique_id=2063829357]
 libraries/ = SubResource("AnimationLibrary_iacmt")
-speed_scale = 2.0
 
 [node name="NPC" type="Node2D" parent="." unique_id=230143685]
 position = Vector2(1200, 0)
 scale = Vector2(1.2, 1.2)
 
-[node name="Dialogue Timer" type="Timer" parent="NPC" unique_id=772450556]
-wait_time = 2.0
-one_shot = true
-
-[node name="Sprite2D" type="Sprite2D" parent="NPC" unique_id=1388853748]
+[node name="NPC Sprite" type="Sprite2D" parent="NPC" unique_id=1388853748]
 position = Vector2(-2, 100)
 texture = ExtResource("4_x6ack")
 flip_h = true
@@ -212,15 +209,41 @@ frame = 8
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NPC" unique_id=1256958879]
 libraries/ = SubResource("AnimationLibrary_maf8m")
 
+[node name="Dialogue Container" type="Node2D" parent="NPC" unique_id=689535188]
+visible = false
+position = Vector2(-23.333332, -70)
+
+[node name="Dialogue Box Sprite" type="Sprite2D" parent="NPC/Dialogue Container" unique_id=793741750]
+position = Vector2(16.666626, -220)
+scale = Vector2(0.4537037, 0.29552472)
+texture = ExtResource("5_6ev3c")
+
+[node name="Dialogue" type="RichTextLabel" parent="NPC/Dialogue Container" unique_id=153012989]
+offset_left = -260.0
+offset_top = -368.3333
+offset_right = 325.83337
+offset_bottom = -113.33331
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_maf8m")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+fit_content = true
+scroll_active = false
+
+[node name="Dialogue Timer" type="Timer" parent="NPC/Dialogue Container" unique_id=772450556]
+wait_time = 3.0
+one_shot = true
+
 [node name="Droplet Particles" type="CPUParticles2D" parent="." unique_id=1767212493]
 position = Vector2(-142, -642)
 amount = 1
-lifetime = 1.4000000000000001
+lifetime = 1.4
 emission_shape = 3
 emission_rect_extents = Vector2(24, 1)
 scale_amount_min = 10.0
 scale_amount_max = 10.0
 color = Color(0.039215688, 0.35686275, 1, 1)
 
-[connection signal="timeout" from="NPC/Dialogue Timer" to="." method="_on_dialogue_timer_timeout"]
 [connection signal="animation_finished" from="NPC/AnimationPlayer" to="." method="_on_npc_animation_finished"]
+[connection signal="timeout" from="NPC/Dialogue Container/Dialogue Timer" to="." method="_on_dialogue_timer_timeout"]
