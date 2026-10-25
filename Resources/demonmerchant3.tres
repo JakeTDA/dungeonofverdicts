@@ -4,4 +4,7 @@
 
 [resource]
 script = ExtResource("1_qfjc8")
+dialogue = "\"Hello Dungeon Master! Would you like to try this new drink I acquired from the human world?"
+agree_dialogue = "Fortune favors the bold! He-he-he..."
+disagree_dialogue = " You never know what you're missing until you try..."
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"

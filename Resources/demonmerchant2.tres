@@ -4,4 +4,7 @@
 
 [resource]
 script = ExtResource("1_wd2dh")
+dialogue = "Hello again! Is it ok if I can set up a shop near this dungeon? I’ll pay you 50 gold for the opportunity!"
+agree_dialogue = "I'll set up right outside, they'll be able to see the shop from miles away!"
+disagree_dialogue = "What a shame. There was enough money in it for the both of us. Ever heard of a win-win?"
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"

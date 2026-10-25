@@ -4,12 +4,13 @@
 
 [resource]
 script = ExtResource("1_i0imo")
-dialogue = "Dungeon Master, I have discovered an ancient temple of the Serpent Lodge beneath the dungeon. Give me gold to awaken the temple, and I shall forge powerful demons for your army! (50 Gold)"
-agree_dialogue = "I shall awaken our army and ready to rain hell upon them!!"
+npc_name = "Demon"
+dialogue = "Dungeon Master, I have discovered an ancient temple of the Serpent Lodge beneath the dungeon. Give me 50 gold to awaken the temple, and I shall forge powerful demons for your army!"
+agree_dialogue = "Let's see what those snakes are up to!"
 agree_money = -50
 agree_power = 40
 agree_reputation = 1
 agree_loyalty = 8
-disagree_dialogue = "But will we not be too weak when they come?"
+disagree_dialogue = "What a dissapointment..."
 disagree_loyalty = -2
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"

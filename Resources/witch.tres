@@ -6,4 +6,10 @@
 script = ExtResource("1_pe5hs")
 npc_name = "Witch"
 sprite_frame = 8
+dialogue = "My, my! Such a powerful Dungeon Master. I have developed a new poison, but I need a test subject. Allow me to test it on you, and I'll give you something wonderful in return!"
+agree_dialogue = "He-he-he, drink up!"
+agree_money = 40
+agree_power = -3
+agree_loyalty = -8
+disagree_dialogue = "*Sigh*, maybe next time. "
 metadata/_custom_type_script = "uid://bnr4vchrtqj2t"
