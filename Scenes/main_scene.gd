@@ -91,21 +91,19 @@ func _process(delta: float) -> void:
 	
 	
 func npc_appear():
-	if power <= 0:
-		#bad ending scene
-		pass
-	elif loyalty <= 0:
-		#bad ending scene
-		pass
+	if power < 0:
+		get_tree().change_scene_to_file("res://Scenes/lose_screen_1.tscn")
+	elif loyalty < 0 or money < 0:
+		get_tree().change_scene_to_file("res://Scenes/lose_screen_2.tscn")
 	elif day >= 30:
-		#good ending scene
+		get_tree().change_scene_to_file("res://Scenes/win_screen.tscn")
 		pass
 	if day > 1:
 		adventurer()
 	var i = RandomNumberGenerator.new()
 	var npc_num : int = i.randi_range(0,15)
 	
-	current_npc = npclist[0]
+	current_npc = npclist[npc_num]
 	if day % 4 == 0:
 		current_npc = demonmerchant
 	elif day % 7 == 0:
