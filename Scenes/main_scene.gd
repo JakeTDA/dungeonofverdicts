@@ -205,18 +205,15 @@ func _on_dialogue_timer_timeout() -> void:
 
 
 func _set_dialogue():
-	if current_npc.npc_name == "Demon":
-		if request_num == 1:
-			if npc_state == "enter_dialogue":
-				$"NPC/Dialogue Container/Dialogue".text = ""
-				
-			elif npc_state == "exit_dialogue":
-				if affirmative_response:
-					$"NPC/Dialogue Container/Dialogue".text = ""
-				
-				else:
-					$"NPC/Dialogue Container/Dialogue".text = ""
+	if npc_state == "enter_dialogue":
+		$"NPC/Dialogue Container/Dialogue".text = current_npc.dialogue
+	elif npc_state == "exit_dialogue":
+		if affirmative_response:
+			$"NPC/Dialogue Container/Dialogue".text = current_npc.agree_dialogue
+		else:
+			$"NPC/Dialogue Container/Dialogue".text = current_npc.disagree_dialogue
 		
+	
 		if request_num == 2:
 			if npc_state == "enter_dialogue":
 				$"NPC/Dialogue Container/Dialogue".text = "Dungeon Master, I have discovered an ancient temple of the Serpent Lodge beneath the dungeon. Give me gold to awaken the temple, and I shall forge powerful demons for your army!"
